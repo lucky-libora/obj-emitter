@@ -1,0 +1,17 @@
+{
+  "name": "obj-emitter",
+  "version": "0.0.1",
+  "description": "Emit object instead of string",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "node node_modules/nyc/bin/nyc.js --reporter=html mocha",
+    "test": "node node_modules/mocha/bin/mocha"
+  },
+  "author": "Aleksey Vasilyev <luckylibora@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.2"
+  }
+}
