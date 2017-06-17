@@ -2,6 +2,19 @@
   "name": "obj-emitter",
   "version": "0.0.1",
   "description": "Emit object instead of string",
+  "keywords": [
+    "EventEmitter",
+    "Events",
+    "emit",
+    "emits",
+    "emitter",
+    "event",
+    "pub/sub",
+    "publish",
+    "reactor",
+    "subscribe",
+    "object"
+  ],
   "main": "index.js",
   "scripts": {
     "coverage": "node node_modules/nyc/bin/nyc.js --reporter=html mocha",
