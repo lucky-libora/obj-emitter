@@ -1,6 +1,6 @@
 {
   "name": "obj-emitter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Emit object instead of string",
   "engines": {
     "node": ">=6.0.0"
