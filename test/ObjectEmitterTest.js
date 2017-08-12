@@ -1,5 +1,5 @@
 require('chai').should();
-const ObjEmitter = require('../lib/ObjEmitter');
+const ObjEmitter = require('../');
 
 describe('ObjEmitter', () => {
 
@@ -7,7 +7,7 @@ describe('ObjEmitter', () => {
 
     beforeEach(() => oe = new ObjEmitter());
 
-    describe('Method emit', () => {
+    describe('#emit', () => {
 
         it('equal objects', cb => {
             oe.on({a: 1, b: 2}, obj => {
@@ -47,7 +47,55 @@ describe('ObjEmitter', () => {
 
     });
 
-    describe('Method removeListener', () => {
+    describe('#once', () => {
+
+        it('basic test', () => {
+            let counter = 0;
+            oe.once({a: 1}, () => counter++);
+            oe.emit({a: 1});
+            oe.emit({a: 1});
+            counter.should.equal(1);
+        });
+
+        it('equal objects', cb => {
+            oe.once({a: 1, b: 2}, obj => {
+                obj.should.deep.equal({a: 1, b: 2});
+                cb();
+            });
+            oe.emit({a: 1, b: 2});
+        });
+
+        it('emit object with additional fields', cb => {
+            oe.once({a: 1, b: 2}, obj => {
+                obj.should.deep.equal({a: 1, b: 2, c: 3});
+                cb();
+            });
+            oe.emit({a: 1, b: 2, c: 3});
+        });
+
+        it('not equal values', cb => {
+            oe.once({a: 1, b: 2}, obj => cb(new Error('Should not call callback')));
+            oe.emit({a: 2, b: 1});
+            cb();
+        });
+
+        it('not enough fields', cb => {
+            oe.once({a: 1, b: 2}, obj => cb(new Error('Should not call callback')));
+            oe.emit({a: 1});
+            cb();
+        });
+
+        it('on empty object', cb => {
+            oe.once({}, obj => {
+                obj.should.deep.equal({a: 1, b: 2});
+                cb();
+            });
+            oe.emit({a: 1, b: 2});
+        });
+
+    });
+
+    describe('#removeListener', () => {
 
         it('basic test', cb => {
             const fn = obj => cb(new Error('Should not call callback'));
@@ -82,7 +130,7 @@ describe('ObjEmitter', () => {
 
     });
 
-    describe('Method removeAllListeners', () => {
+    describe('#removeAllListeners', () => {
 
         it('basic test', cb => {
             oe.on({a: 1, b: 2}, () => cb(new Error('Should not call callback')));

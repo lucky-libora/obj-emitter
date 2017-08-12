@@ -1,9 +1,9 @@
 {
   "name": "obj-emitter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Emit object instead of string",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "keywords": [
     "EventEmitter",
@@ -33,5 +33,8 @@
     "chai": "^4.0.2",
     "mocha": "^3.4.2",
     "nyc": "^11.0.2"
+  },
+  "dependencies": {
+    "eventemitter3": "^2.0.3"
   }
 }

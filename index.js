@@ -1,1 +1,1 @@
-module.exports = require('./lib/ObjEmitter');
+module.exports = require('./lib/ObjectEmitter');
