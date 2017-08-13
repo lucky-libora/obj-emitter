@@ -1,6 +1,6 @@
 {
   "name": "obj-emitter",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Emit object instead of string",
   "engines": {
     "node": ">=8.0.0"
@@ -35,6 +35,6 @@
     "nyc": "^11.0.2"
   },
   "dependencies": {
-    "eventemitter3": "https://github.com/lucky-libora/eventemitter3.git"
+    "event-emitter3": "^1.0.0"
   }
 }
