@@ -1,6 +1,6 @@
 {
   "name": "obj-emitter",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Emit object instead of string",
   "engines": {
     "node": ">=6.0.0"
@@ -35,6 +35,6 @@
     "nyc": "^11.0.2"
   },
   "dependencies": {
-    "event-emitter3": "^1.0.0"
+    "event-emitter3": "1.0.3"
   }
 }
